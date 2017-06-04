@@ -14,8 +14,9 @@ import {
   Navigator
 } from 'react-native-deprecated-custom-components';
 
-import Main from './app/components/main';
-import Dashboard from './app/components/dashboard';
+var Main = require('./app/components/main');
+var Directeur = require('./app/components/directeur/directeur_accueil');
+var Eleve = require('./app/components/eleve/eleve_accueil');
 
 class test_project extends React.Component {
   render() {
@@ -27,33 +28,18 @@ class test_project extends React.Component {
     );
   }
 
+  // The routes
   renderScene(route, navigator) {
    if(route.name == 'Main') {
      return <Main navigator={navigator} />
    }
-   if(route.name == 'Dashboard') {
-     return <Dashboard navigator={navigator} {...route.passProps} />
+   if(route.name == 'Eleve') {
+     return <Eleve navigator={navigator} />
+   }
+   if(route.name == 'Directeur') {
+     return <Directeur navigator={navigator} />
    }
  };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('test_project', () => test_project);

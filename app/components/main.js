@@ -3,13 +3,9 @@ import {
   View,
   Text,
   StyleSheet,
-  TextInput,
-  TouchableHighlight,
-  ActivityIndicator
+  TouchableHighlight
 } from 'react-native';
 
-var api = require('../util/api');
-var Dashboard = require('./dashboard');
 
 var styles = StyleSheet.create({
   container: {
@@ -19,22 +15,6 @@ var styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#48BBEC'
-  },
-  title: {
-    marginBottom: 20,
-    fontSize: 25,
-    textAlign: 'center',
-    color: '#fff'
-  },
-  searchInput: {
-    height: 50,
-    padding: 4,
-    marginRight: 5,
-    fontSize: 23,
-    borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: 8,
-    color: 'white'
   },
   buttonText: {
     fontSize: 18,
@@ -56,73 +36,34 @@ var styles = StyleSheet.create({
 });
 
 class Main extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      username: '',
-      isloading: false,
-      error: false,
-    }
-  }
 
-  handleChange(event){
-    this.setState({
-      username: event.nativeEvent.text
+  handleSubmitD(){
+    this.props.navigator.push({
+      name : 'Directeur'
     });
   }
-
-  handleSubmit(){
-    this.setState({
-      isloading: true
+  handleSubmitE(){
+    this.props.navigator.push({
+      name : 'Eleve'
     });
-    api.getBio(this.state.username)
-      .then((res) => {
-        if(res.message === 'Not Found'){
-          this.setState({
-            isloading: false,
-            error: 'User not found',
-            username: ''
-          });}
-          // If the fetch worked well, we add a new route
-        else {
-          this.props.navigator.push({
-            name : 'Dashboard',
-            passProps: {userInfo: res}
-          });
-          this.setState({
-            isloading: false,
-            error: false,
-            username: ''
-          });
-        }
-      })
-    }
+  }
 
   render(){
-    var showErr = (
-      this.state.error ? <Text> {this.state.error} </Text> : <View></View>
-    );
     return (
       <View style={styles.container}>
-        <Text style={styles.title}> Search for a Github user </Text>
-
-        <TextInput
-        style={styles.searchInput}
-        value={this.props.username}
-        onChange={this.handleChange.bind(this)}/>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.handleSubmitD.bind(this)}
+          underlayColor="white">
+            <Text style={styles.buttonText}> DIRECTEUR </Text>
+        </TouchableHighlight>
 
         <TouchableHighlight
           style={styles.button}
-          onPress={this.handleSubmit.bind(this)}
+          onPress={this.handleSubmitE.bind(this)}
           underlayColor="white">
-            <Text style={styles.buttonText}> Search </Text>
+            <Text style={styles.buttonText}> ÉLÈVE </Text>
         </TouchableHighlight>
-        <ActivityIndicator
-        animating={this.state.isloading}
-        color='#111'
-        size='large'>
-        </ActivityIndicator>
-        {showErr}
       </View>
     )
   };
