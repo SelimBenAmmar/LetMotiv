@@ -25,7 +25,7 @@ class Directeur_Accueil_0 extends React.Component {
       <Image
       //source={{uri:}}
       style={styles.logo}/>
-      <Text> N''hésitez plus ! </Text>
+      <Text> N``hésitez plus ! </Text>
       <Text> Créez la vie de votre lycée ! </Text>
 
       <Image
@@ -43,10 +43,10 @@ var styles = StyleSheet.create({
     flex: 1
   },
   logo: {
-    height: 350,
-  }
+    height: 350
+  },
   calendar: {
-    height: 350,
+    height: 350
   }
 });
 
