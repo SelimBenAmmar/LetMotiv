@@ -4,50 +4,56 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+ import React, { Component } from 'react';
+ import {
+   AppRegistry,
+   StyleSheet,
+   Text
+ } from 'react-native';
+ import {
+   Navigator
+ } from 'react-native-deprecated-custom-components';
 
-export default class test_project extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+ import Main from './app/components/main';
+ import Dashboard from './app/components/dashboard';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+ class test_project extends React.Component {
+   render() {
+     return (
+       <Navigator
+       style={{ flex:1 }}
+       initialRoute={{ name: 'Main' }}
+       renderScene={ this.renderScene } />
+     );
+   }
 
-AppRegistry.registerComponent('test_project', () => test_project);
+   renderScene(route, navigator) {
+    if(route.name == 'Main') {
+      return <Main navigator={navigator} />
+    }
+    if(route.name == 'Dashboard') {
+      return <Dashboard navigator={navigator} {...route.passProps} />
+    }
+  };
+ }
+
+ const styles = StyleSheet.create({
+   container: {
+     flex: 1,
+     justifyContent: 'center',
+     alignItems: 'center',
+     backgroundColor: '#F5FCFF',
+   },
+   welcome: {
+     fontSize: 20,
+     textAlign: 'center',
+     margin: 10,
+   },
+   instructions: {
+     textAlign: 'center',
+     color: '#333333',
+     marginBottom: 5,
+   },
+ });
+
+ AppRegistry.registerComponent('test_project', () => test_project);

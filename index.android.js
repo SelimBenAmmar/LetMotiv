@@ -8,9 +8,11 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Navigator,
   Text
 } from 'react-native';
+import {
+  Navigator
+} from 'react-native-deprecated-custom-components';
 
 import Main from './app/components/main';
 import Dashboard from './app/components/dashboard';
