@@ -39,7 +39,7 @@ class Main extends React.Component {
 
   handleSubmitD(){
     this.props.navigator.push({
-      name : 'Directeur'
+      name : 'Directeur_Accueil_0'
     });
   }
   handleSubmitE(){
