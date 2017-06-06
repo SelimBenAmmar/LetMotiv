@@ -7,6 +7,8 @@ import {
   StyleSheet
 } from 'react-native';
 
+var Bottom_navigation = require('../../util/bottom_navigation');
+
 class Directeur_Accueil_0 extends React.Component {
   goToCalendar(){
       this.props.navigator.push({
@@ -23,15 +25,17 @@ class Directeur_Accueil_0 extends React.Component {
       ------------------------------------------------------------- */
       <View style={styles.container}>
       <Image
-      //source={{uri:}}
+      source={require('../../img/logo_bas.png')}
       style={styles.logo}/>
       <Text> N``hésitez plus ! </Text>
       <Text> Créez la vie de votre lycée ! </Text>
 
       <Image
-      //source={{uri:}}
+      source={require('../../img/calendrier.png')}
       style={styles.calendar}
       onPress={this.goToCalendar.bind(this)}/>
+
+      <Bottom_navigation/>
       </View>
     )
   }
@@ -43,11 +47,15 @@ var styles = StyleSheet.create({
     flex: 1
   },
   logo: {
-    height: 350
+    height: 50,
+    width: 50
   },
   calendar: {
-    height: 350
+    height: 300,
+    width: 300
   }
 });
+
+
 
 module.exports = Directeur_Accueil_0;
