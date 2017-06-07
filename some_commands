@@ -2,5 +2,8 @@ export ANDROID_HOME=$/home/hackacka/Android/Sdk
 export PATH=${PATH}:/home/hackacka/Android/Sdk/platform-tools
 adb reverse tcp:8081 tcp:8081
 
+// Launch the debugger
+react-native log-android
+
 adb shell input keyevent 82
 use hot reloading

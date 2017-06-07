@@ -12,28 +12,26 @@ var Bottom_navigation = require('../../util/bottom_navigation');
 class Directeur_Accueil_0 extends React.Component {
   goToCalendar(){
       this.props.navigator.push({
-        name : 'Calendrier'
+        name : 'Calendrier_Choix_Directeur'
       });
   }
 
   render(){
     return (
-      /* --------------------   a FAIRE ----------------------------
-      1- Ajouter le le logo de la fléche qui pointe vers le bas
-      2- Mettre l'image du bloc note vide (date et durée)
-      3- Ad the footer navigation bar with : react-native-material-bottom-navigation
-      ------------------------------------------------------------- */
       <View style={styles.container}>
       <Image
       source={require('../../img/logo_bas.png')}
       style={styles.logo}/>
       <Text> N``hésitez plus ! </Text>
-      <Text> Créez la vie de votre lycée ! </Text>
+      <Text> Créez de la vie dans votre lycée ! </Text>
 
-      <Image
-      source={require('../../img/calendrier.png')}
-      style={styles.calendar}
-      onPress={this.goToCalendar.bind(this)}/>
+      <TouchableHighlight
+      onPress={this.goToCalendar.bind(this)}
+      underlayColor="white">
+        <Image
+        source={require('../../img/calendrier.png')}
+        style={styles.calendar}/>
+      </TouchableHighlight>
 
       <Bottom_navigation/>
       </View>

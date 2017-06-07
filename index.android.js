@@ -17,7 +17,7 @@ import {
 var Main = require('./app/components/main');
 
 var Directeur_Accueil_0 = require('./app/components/directeur/directeur_accueil0');
-var Calendrier = require('./app/components/directeur/calendrier_date_duree');
+var Calendrier_Choix_Directeur = require('./app/components/directeur/calendrier_choix_directeur');
 
 var Eleve = require('./app/components/eleve/eleve_accueil');
 
@@ -40,8 +40,8 @@ class test_project extends React.Component {
    if(route.name == 'Directeur_Accueil_0') {
      return <Directeur_Accueil_0 navigator={navigator} />
    }
-   if(route.name == 'Calendrier') {
-     return <Calendrier navigator={navigator} />
+   if(route.name == 'Calendrier_Choix_Directeur') {
+     return <Calendrier_Choix_Directeur navigator={navigator} />
    }
 
     /* ----------------- Les routes de l'interface de l'élève ------------------ */
