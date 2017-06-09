@@ -39,12 +39,17 @@ class Main extends React.Component {
 
   handleSubmitD(){
     this.props.navigator.push({
-      name : 'Directeur_Accueil_0'
+      name : 'Register'
     });
   }
   handleSubmitE(){
     this.props.navigator.push({
-      name : 'Eleve'
+      name : 'Login'
+    });
+  }
+  handleSubmitF(){
+    this.props.navigator.push({
+      name : 'Directeur_Accueil_0'
     });
   }
 
@@ -55,14 +60,21 @@ class Main extends React.Component {
           style={styles.button}
           onPress={this.handleSubmitD.bind(this)}
           underlayColor="white">
-            <Text style={styles.buttonText}> DIRECTEUR </Text>
+            <Text style={styles.buttonText}> Register </Text>
         </TouchableHighlight>
 
         <TouchableHighlight
           style={styles.button}
           onPress={this.handleSubmitE.bind(this)}
           underlayColor="white">
-            <Text style={styles.buttonText}> ÉLÈVE </Text>
+            <Text style={styles.buttonText}> Login </Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.handleSubmitF.bind(this)}
+          underlayColor="white">
+            <Text style={styles.buttonText}> directeur </Text>
         </TouchableHighlight>
       </View>
     )
