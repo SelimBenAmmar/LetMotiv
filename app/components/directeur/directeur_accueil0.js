@@ -7,6 +7,7 @@ import {
   StyleSheet
 } from 'react-native';
 
+
 var Bottom_navigation = require('../../util/bottom_navigation');
 
 class Directeur_Accueil_0 extends React.Component {
@@ -22,8 +23,8 @@ class Directeur_Accueil_0 extends React.Component {
       <Image
       source={require('../../img/logo_bas.png')}
       style={styles.logo}/>
-      <Text> N hésitez plus ! </Text>
-      <Text> Créez de la vie dans votre lycée ! </Text>
+      <Text style={styles.emphasis}> N'hésitez plus ! </Text>
+      <Text style={styles.body}> Créez de la vie dans votre lycée ! </Text>
       <TouchableHighlight
       onPress={this.goToCalendar.bind(this)}
       underlayColor="white">
@@ -41,15 +42,30 @@ class Directeur_Accueil_0 extends React.Component {
 var styles = StyleSheet.create({
   container: {
     marginTop: 65,
-    flex: 1
+    flex: 1,
+    flexDirection: 'column',
+    alignItems:'center',
+    backgroundColor: '#312783',
+    padding: 30
   },
   logo: {
-    height: 50,
-    width: 50
+    height: 100,
+    width: 100
   },
   calendar: {
     height: 300,
     width: 300
+  },
+  body: {
+    color: 'white',
+    fontSize: 18,
+    fontFamily: 'futura'
+  },
+  emphasis: {
+    fontWeight: 'bold',
+    color: '#f39200',
+    fontSize: 20,
+    padding:10
   }
 });
 

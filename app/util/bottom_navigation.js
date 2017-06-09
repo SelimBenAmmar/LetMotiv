@@ -13,27 +13,27 @@ class Bottom_navigation extends Component {
         onTabChange={(newTabIndex) => alert(`New Tab at position ${newTabIndex}`)}
       >
         <Tab
-          barBackgroundColor="#37474F"
+          barBackgroundColor="#f39200"
           label="Réservation"
           icon={<IconF size={24} color="white" name="magnifying-glass" />}
         />
         <Tab
-          barBackgroundColor="#00796B"
+          barBackgroundColor="#f39200"
           label="Bons Plans"
           icon={<IconMCI size={24} color="white" name="wallet-giftcard" />}
         />
         <Tab
-          barBackgroundColor="#5D4037"
+          barBackgroundColor="#f39200"
           label="Mes activités"
           icon={<IconF size={24} color="white" name="clipboard-notes" />}
         />
         <Tab
-          barBackgroundColor="#3E2723"
+          barBackgroundColor="#f39200"
           label="Mon compte"
           icon={<IconMCI size={24} color="white" name="account-circle" />}
         />
         <Tab
-          barBackgroundColor="#3E2723"
+          barBackgroundColor="#f39200"
           label="Plus"
           icon={<IconMCI size={24} color="white" name="dots-horizontal" />}
         />
