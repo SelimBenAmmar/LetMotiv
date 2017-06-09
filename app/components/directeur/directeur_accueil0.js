@@ -22,9 +22,8 @@ class Directeur_Accueil_0 extends React.Component {
       <Image
       source={require('../../img/logo_bas.png')}
       style={styles.logo}/>
-      <Text> N``hésitez plus ! </Text>
+      <Text> N hésitez plus ! </Text>
       <Text> Créez de la vie dans votre lycée ! </Text>
-
       <TouchableHighlight
       onPress={this.goToCalendar.bind(this)}
       underlayColor="white">

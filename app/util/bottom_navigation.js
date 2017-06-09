@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import IconF from 'react-native-vector-icons/Foundation';
+import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 
 class Bottom_navigation extends Component {
   render() {
@@ -14,27 +15,27 @@ class Bottom_navigation extends Component {
         <Tab
           barBackgroundColor="#37474F"
           label="Réservation"
-          icon={<Icon size={24} color="white" name="tv" />}
+          icon={<IconF size={24} color="white" name="magnifying-glass" />}
         />
         <Tab
           barBackgroundColor="#00796B"
           label="Bons Plans"
-          icon={<Icon size={24} color="white" name="tv" />}
+          icon={<IconMCI size={24} color="white" name="wallet-giftcard" />}
         />
         <Tab
           barBackgroundColor="#5D4037"
           label="Mes activités"
-          icon={<Icon size={24} color="white" name="tv" />}
+          icon={<IconF size={24} color="white" name="clipboard-notes" />}
         />
         <Tab
           barBackgroundColor="#3E2723"
           label="Mon compte"
-          icon={<Icon size={24} color="white" name="account-circle" />}
+          icon={<IconMCI size={24} color="white" name="account-circle" />}
         />
         <Tab
           barBackgroundColor="#3E2723"
           label="Plus"
-          icon={<Icon size={24} color="white" name="tv" />}
+          icon={<IconMCI size={24} color="white" name="dots-horizontal" />}
         />
       </BottomNavigation>
     )

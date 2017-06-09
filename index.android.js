@@ -48,9 +48,6 @@ class test_project extends React.Component {
    if(route.name == 'Eleve') {
      return <Eleve navigator={navigator} />
    }
-
-
-
  };
 }
 
