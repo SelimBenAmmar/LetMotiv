@@ -6,7 +6,6 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-
 var styles = StyleSheet.create({
   container: {
     flex: 1,
