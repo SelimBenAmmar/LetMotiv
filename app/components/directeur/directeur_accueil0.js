@@ -63,22 +63,23 @@ var styles = StyleSheet.create({
   },
   logo: {
     height: 100,
-    width: 100
+    width: 100,
+    marginBottom: 20
   },
   calendar: {
-    height: 300,
-    width: 300
+    height: 220,
+    width: 220,
+    marginTop: 20
   },
   body: {
     color: 'white',
     fontSize: 18,
-    fontFamily: 'futura'
+    fontFamily: 'avenir'
   },
   emphasis: {
     fontWeight: 'bold',
     color: '#f39200',
     fontSize: 20,
-    padding:10
   },
   button: {
     backgroundColor: 'lightblue',

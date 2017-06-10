@@ -3,8 +3,11 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableHighlight
+  TouchableHighlight,
+  Dimensions
 } from 'react-native';
+
+var DeviceWidth = Dimensions.get('window').width;
 
 var styles = StyleSheet.create({
   container: {
@@ -13,24 +16,24 @@ var styles = StyleSheet.create({
     marginTop: 65,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#48BBEC'
+    alignItems: 'center',
+    backgroundColor: '#312783'
   },
   buttonText: {
     fontSize: 18,
     color: '#111',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    color: 'white'
   },
   button: {
     height: 45,
+    width: DeviceWidth/2,
     flexDirection: 'row',
-    backgroundColor: 'white',
-    borderColor: 'white',
-    borderWidth: 1,
+    backgroundColor: '#f39200',
     borderRadius: 8,
     marginBottom: 10,
     marginTop: 10,
-    alignSelf: 'stretch',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 });
 
@@ -59,21 +62,21 @@ class Main extends React.Component {
           style={styles.button}
           onPress={this.handleSubmitD.bind(this)}
           underlayColor="white">
-            <Text style={styles.buttonText}> Register </Text>
+            <Text style={styles.buttonText}> REGISTER </Text>
         </TouchableHighlight>
 
         <TouchableHighlight
           style={styles.button}
           onPress={this.handleSubmitE.bind(this)}
           underlayColor="white">
-            <Text style={styles.buttonText}> Login </Text>
+            <Text style={styles.buttonText}> LOGIN </Text>
         </TouchableHighlight>
 
         <TouchableHighlight
           style={styles.button}
           onPress={this.handleSubmitF.bind(this)}
           underlayColor="white">
-            <Text style={styles.buttonText}> directeur </Text>
+            <Text style={styles.buttonText}> DIRECTEUR </Text>
         </TouchableHighlight>
       </View>
     )

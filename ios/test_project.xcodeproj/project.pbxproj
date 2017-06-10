@@ -57,7 +57,6 @@
 		4594A4391EEAF8CA004E8CEC /* Futura Condensed Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4594A4381EEAF8CA004E8CEC /* Futura Condensed Medium.otf */; };
 		4594A4621EEAFF79004E8CEC /* futura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4594A4611EEAFF79004E8CEC /* futura.ttf */; };
 		45E726DFE3A34227A072436D /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEEF7C489AFF4BED83D016A0 /* FontAwesome.ttf */; };
-		4F5ECBA2931E43BC87316D19 /* Futura (Light).ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB3865DF43D24B84B5FAED7E /* Futura (Light).ttf */; };
 		568EE8B7A68647C490102AEE /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A715387EDF3544F89F477E42 /* Zocial.ttf */; };
 		5A9DDFEEC4F649BEA36EA20F /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDED859DF952474397FAC9B8 /* MaterialCommunityIcons.ttf */; };
 		5E84E583DCA54C3286204F68 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67ED27BC87E74DFBAF87BA67 /* SimpleLineIcons.ttf */; };
@@ -1024,7 +1023,6 @@
 				8D6C3242524D4933A1D7838A /* EvilIcons.ttf in Resources */,
 				044D4B36F1054678AC7F66E2 /* FontAwesome.ttf in Resources */,
 				1B0A8325883D44C288194382 /* Foundation.ttf in Resources */,
-				4F5ECBA2931E43BC87316D19 /* Futura (Light).ttf in Resources */,
 				C9E79BE7073F4C109F02983B /* Futura Condensed Medium.otf in Resources */,
 				F8345C9E86D340AC9F2AD3A7 /* Ionicons.ttf in Resources */,
 				E0EBF4108F0140359E225659 /* MaterialCommunityIcons.ttf in Resources */,
