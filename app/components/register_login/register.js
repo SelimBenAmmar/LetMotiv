@@ -5,7 +5,7 @@ import {
   TouchableHighlight,
   Image,
   StyleSheet
-} from 'react-native'
+} from 'react-native';
 
 import { Form, InputField,
         Separator, SwitchField, LinkField ,
@@ -39,58 +39,45 @@ class Register extends React.Component {
           <View style={styles.titleContainer}>
             <Text style={styles.title}>BIENVENUE !</Text>
           </View>
-          <Form 
+          <Form
             ref="form"
             style={styles.form}
             onChange={this.handleFormChange.bind(this)}>
-            
-            <InputField 
+
+            <InputField
               iconLeft={<IconMI style={styles.icon} color="#C7C7CC" name="person"/>}
-              style={styles.formField} 
-              ref='first_name' 
+              style={styles.formField}
+              ref='first_name'
               placeholder='Prénom'/>
-            
-            <InputField 
+
+            <InputField
               iconLeft={<IconMI style={styles.icon} size={24} color="#C7C7CC" name="person"/>}
-              style={styles.formField} 
-              ref='last_name' 
+              style={styles.formField}
+              ref='last_name'
               placeholder='Nom'/>
-            
+
             <DatePickerField ref='birthday'
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="ios-calendar"/>}
-              style={styles.formField} 
+              style={styles.formField}
               minimumDate={new Date('1/1/1900')}
               maximumDate={new Date()} mode='date' placeholder='Date de naissance'/>
-            
-            <PickerField 
-              style={styles.formField} ref='gender' placeholder='Genre' 
-              options={{
-                female: 'Feminin',
-                male: 'Masculin'
-            }}/>
-            
-            <InputField 
+
+            <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-lock"/>}
-              style={styles.formField} 
-              ref='password' 
+              style={styles.formField}
+              ref='password'
               placeholder='Mot de Passe'/>
-            
-            <InputField 
+
+            <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="ios-mail"/>}
-              style={styles.formField} 
-              ref='mail' 
+              style={styles.formField}
+              ref='mail'
               placeholder='Adresse email'/>
-            
-            <InputField 
-              iconLeft={<IconMI style={styles.icon} size={24} color="#C7C7CC" name="phone"/>}
-              style={styles.formField} 
-              ref='phone' 
-              placeholder='Téléphone'/>
-            
-            <InputField 
+
+            <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-home"/>}
-              style={styles.formField} 
-              ref='code_etablissement' 
+              style={styles.formField}
+              ref='code_etablissement'
               placeholder='Code établissement'/>
           </Form>
           <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#DA8300'>
@@ -102,6 +89,20 @@ class Register extends React.Component {
     );
   }
 }
+
+/* Demander les informations sur le sexe et le numéro de téléphone si besoin
+<PickerField
+  style={styles.formField} ref='gender' placeholder='Genre'
+  options={{
+    female: 'Feminin',
+    male: 'Masculin'
+}}/>
+<InputField
+  iconLeft={<IconMI style={styles.icon} size={24} color="#C7C7CC" name="phone"/>}
+  style={styles.formField}
+  ref='phone'
+  placeholder='Téléphone'/>
+*/
 
 var styles = StyleSheet.create({
   container: {
@@ -118,12 +119,10 @@ var styles = StyleSheet.create({
     margin:20,
   },
 
-
-
   formContainer: {
     width:300,
     alignSelf: 'stretch',
-    marginHorizontal: 40,
+    marginHorizontal: 20,
     backgroundColor: 'white',
   },
   form: {

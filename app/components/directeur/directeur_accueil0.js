@@ -11,16 +11,23 @@ import {
 var Bottom_navigation = require('../../util/bottom_navigation');
 
 class Directeur_Accueil_0 extends React.Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
     isDateTimePickerVisible: false,
+    date_acti: 0,
+    month_acti: 0,
+    year_acti: 0
+    }
   };
 
+  // Les fonctionnalités liées au calendrier
   _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
-
   _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
-
   _handleDatePicked = date => {
-    console.log('A date has been picked: ', date);
+    this.setState({ date_acti: date.getDate() });
+    this.setState({ date_acti: date.getMonth() + 1 });
+    this.setState({ date_acti: date.getFullYear() });
     this._hideDateTimePicker();
   };
 
@@ -44,7 +51,7 @@ class Directeur_Accueil_0 extends React.Component {
         isVisible={this.state.isDateTimePickerVisible}
         onConfirm={this._handleDatePicked}
         onCancel={this._hideDateTimePicker}
-        mode={'datetime'}
+        mode={'date'}
       />
       <Bottom_navigation/>
       </View>
