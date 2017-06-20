@@ -65,7 +65,7 @@ class Login extends React.Component {
           style={styles.button}
           onPress={this.goToRegister.bind(this)}
           underlayColor="white">
-            <Text style={styles.buttonText}> CREER UN COMPTE </Text>
+            <Text style={{color: 'white'}}> CREER UN COMPTE </Text>
         </TouchableHighlight>
       </View>
     );
