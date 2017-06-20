@@ -36,6 +36,15 @@ class Directeur_Accueil_0 extends React.Component {
     this._hideDateTimePicker();
   };
 
+  // Les fonctionnalités liées au catalogue
+  goToCatalogue(){
+      this.props.navigator.push({
+        name : 'Directeur_Catalogue'
+      });
+      console.log()
+      }
+
+
   render(){
     return (
       <View style={styles.container}>
@@ -55,9 +64,9 @@ class Directeur_Accueil_0 extends React.Component {
               <Text style={styles.buttonText}> {this.state.date_acti} {this.state.month_acti}  </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={this._showDateTimePicke} style={styles.eventButton}>
+          <TouchableOpacity onPress={this.goToCatalogue.bind(this)} style={styles.eventButton}>
             <View style={styles.eventButton}>
-              <Text style={styles.buttonText}> Event </Text>
+              <Text style={styles.buttonText}> {this.props.activite} </Text>
             </View>
           </TouchableOpacity>
           <DateTimePicker
