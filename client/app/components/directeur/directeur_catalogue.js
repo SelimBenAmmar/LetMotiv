@@ -30,7 +30,11 @@ class Directeur_Catalogue extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    selection:0
+    selection:0,
+    day_acti: this.props.day_acti,
+    date_acti: this.props.date_acti,
+    month_acti: this.props.month_acti,
+    year_acti: this.props.year_acti
     }
   };
 
@@ -58,7 +62,11 @@ set4(){
         this.props.navigator.push({
           name : 'Directeur_Accueil_0',
             passProps: {
-            activite: a
+            activite: a,
+            day_acti: this.state.day_acti,
+            date_acti: this.state.date_acti,
+            month_acti: this.state.month_acti,
+            year_acti: this.state.year_acti
           }
         });
     }

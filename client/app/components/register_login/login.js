@@ -35,7 +35,11 @@ class Login extends React.Component {
     this.props.navigator.push({
       name : 'Directeur_Accueil_0',
       passProps: {
-      activite: 'Activité'
+      activite: 'Activité',
+      day_acti: '',
+      date_acti: 'Date',
+      month_acti: '',
+      year_acti: ''
     }
     });
   }
@@ -65,9 +69,9 @@ class Login extends React.Component {
               ref='password'
               placeholder='Mot de Passe'/>
           </Form>
-          <TouchableHighlight 
-            style={styles.formButton} 
-            onPress={this.goToDirecteur.bind(this)} 
+          <TouchableHighlight
+            style={styles.formButton}
+            onPress={this.goToDirecteur.bind(this)}
             underlayColor='#DA8300'>
             <Text style={styles.formButtonText}>CONNEXION</Text>
           </TouchableHighlight>
