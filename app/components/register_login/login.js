@@ -98,8 +98,8 @@ var styles = StyleSheet.create({
 
   formContainer: {
     width:300,
-    alignSelf: 'stretch',
-    marginHorizontal: 40,
+    alignSelf: 'center',
+    marginHorizontal: 60,
     backgroundColor: 'white',
   },
   form: {
@@ -107,10 +107,10 @@ var styles = StyleSheet.create({
   },
   formField: {
     fontSize: 12,
-    alignItems:'center',
   },
   icon: {
-    alignSelf:'center',
+    flexDirection: 'row',
+    alignSelf: 'center',
     fontSize:20,
   },
 

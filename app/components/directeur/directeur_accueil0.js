@@ -38,21 +38,30 @@ class Directeur_Accueil_0 extends React.Component {
       source={require('../../img/logo_bas.png')}
       style={styles.logo}/>
       <Text style={styles.emphasis}> N''hésitez plus ! </Text>
+
       <Text style={styles.body}> Créez de la vie dans votre lycée ! </Text>
+      <View style={styles.calendar}>
         <Image
         source={require('../../img/calendrier.png')}
-        style={styles.calendar}/>
-      <TouchableOpacity onPress={this._showDateTimePicker}>
-        <View style={styles.button}>
-          <Text> C''est parti ! </Text>
-        </View>
-      </TouchableOpacity>
-      <DateTimePicker
-        isVisible={this.state.isDateTimePickerVisible}
-        onConfirm={this._handleDatePicked}
-        onCancel={this._hideDateTimePicker}
-        mode={'date'}
-      />
+        style={styles.backgroundCalendar}>
+          <TouchableOpacity onPress={this._showDateTimePicker}>
+            <View style={styles.dateButton}>
+              <Text style={styles.buttonText}> Date </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this._showDateTimePicker} style={styles.eventButton}>
+            <View style={styles.eventButton}>
+              <Text style={styles.buttonText}> Event </Text>
+            </View>
+          </TouchableOpacity>
+          <DateTimePicker
+          isVisible={this.state.isDateTimePickerVisible}
+          onConfirm={this._handleDatePicked}
+          onCancel={this._hideDateTimePicker}
+          mode={'date'}
+          />
+        </Image>
+      </View>
       <Bottom_navigation/>
       </View>
     )
@@ -74,9 +83,15 @@ var styles = StyleSheet.create({
     marginBottom: 20
   },
   calendar: {
-    height: 220,
-    width: 220,
-    marginTop: 20
+    width: 250,
+    height: 250,
+    alignSelf: 'center',
+  },
+  backgroundCalendar: {
+    flex: 1,
+    height: null,
+    width: null,
+    resizeMode: 'contain'
   },
   body: {
     color: 'white',
@@ -88,14 +103,22 @@ var styles = StyleSheet.create({
     color: '#f39200',
     fontSize: 20,
   },
-  button: {
-    backgroundColor: 'lightblue',
-    padding: 12,
-    margin: 16,
+  dateButton: {
+    height: 120,
+    marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 4,
-    borderColor: 'rgba(0, 0, 0, 0.1)',
+  },
+  eventButton: {
+
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#C7C7CC',
+    fontSize: 30,
+    backgroundColor: 'white',
   }
 });
 module.exports = Directeur_Accueil_0;
