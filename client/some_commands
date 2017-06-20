@@ -1,0 +1,21 @@
+
+Selim commands démarrage :
+export ANDROID_HOME=$/home/hackacka/Android/Sdk
+export PATH=${PATH}:/home/hackacka/Android/Sdk/platform-tools
+adb reverse tcp:8081 tcp:8081
+
+
+
+Luc commands démarrage :
+export ANDROID_HOME=$/Users/lucgibaud/Library/Android/sdk
+export PATH=${PATH}:/Users/lucgibaud/Library/Android/sdk/platform-tools
+adb reverse tcp:8081 tcp:8081
+
+
+
+node modules to install :
+
+
+Nicolas commands for size of screen :
+import Dimensions from react-native;
+var devicewidth = Dimensions.get('window').width;

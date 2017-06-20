@@ -1,0 +1,36 @@
+{
+  "name": "test_project",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^16.0.0-alpha.6",
+    "react-native": "^0.44.0",
+    "react-native-calendar": "^0.12.2",
+    "react-native-calendars": "^1.2.22",
+    "react-native-device": "^1.0.1",
+    "react-native-form-generator": "^0.9.9",
+    "react-native-material-bottom-navigation": "^0.5.1",
+    "react-native-modal-datetime-picker": "^4.6.0",
+    "react-native-vector-icons": "^4.2.0",
+    "react-test-renderer": "^15.5.4",
+    "tcomb-form-native": "^0.6.9"
+  },
+  "devDependencies": {
+    "babel-jest": "20.0.3",
+    "babel-preset-react-native": "1.9.2",
+    "jest": "20.0.4",
+    "react-test-renderer": "~15.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./ios/Fonts"
+    ]
+  }
+}
