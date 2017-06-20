@@ -19,6 +19,7 @@ var Directeur_Accueil_0 = require('./app/components/directeur/directeur_accueil0
 var Eleve = require('./app/components/eleve/eleve_accueil');
 var Register = require('./app/components/register_login/register');
 var Login = require('./app/components/register_login/login');
+var Directeur_Catalogue = require('./app/components/directeur/directeur_catalogue');
 
 class test_project extends React.Component {
   render() {
@@ -45,6 +46,9 @@ class test_project extends React.Component {
    /* ----------------- Les routes de l'interface du directeur ------------------ */
    if(route.name == 'Directeur_Accueil_0') {
      return <Directeur_Accueil_0 navigator={navigator} />
+   }
+   if(route.name == 'Directeur_Catalogue') {
+     return <Directeur_Catalogue navigator={navigator} />
    }
 
     /* ----------------- Les routes de l'interface de l'élève ------------------ */
