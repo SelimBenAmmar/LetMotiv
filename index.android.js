@@ -36,7 +36,7 @@ class test_project extends React.Component {
     return (
       <Navigator
       style={{ flex:1 }}
-      initialRoute={{ name: 'Directeur_Catalogue' }}
+      initialRoute={{ name: 'Login' }}
       renderScene={ this.renderScene } />
     );
   }
