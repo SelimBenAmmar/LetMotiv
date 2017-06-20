@@ -30,33 +30,40 @@ class Login extends React.Component {
     });
   }
 
+  goToDirecteur(){
+    this.props.navigator.push({
+      name : 'Directeur_Accueil_0'
+    });
+    console.log()
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Image
           source={require('../../img/logo_haut.png')}
           style={styles.logo}/>
-        
+
         <View style={styles.formContainer}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>BIENVENUE !</Text>
           </View>
-          <Form 
+          <Form
             ref="form"
             style={styles.form}
             onChange={this.handleFormChange.bind(this)}>
-            <InputField 
+            <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="ios-person"/>}
-              style={styles.formField} 
+              style={styles.formField}
               ref='id'
-              placeholder='Adresse email ou mobile'/>
-            <InputField 
+              placeholder='Pseudo'/>
+            <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-lock"/>}
-              style={styles.formField} 
-              ref='password' 
+              style={styles.formField}
+              ref='password'
               placeholder='Mot de Passe'/>
           </Form>
-          <TouchableHighlight style={styles.formButton} onPress={this.onPress} underlayColor='#DA8300'>
+          <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
             <Text style={styles.formButtonText}>CONNEXION</Text>
           </TouchableHighlight>
         </View>
