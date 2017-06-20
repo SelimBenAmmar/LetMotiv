@@ -52,6 +52,13 @@ set4(){
     this.setState({ selection: 4 });
     }
 
+goToDirecteur(){
+    this.props.navigator.push({
+      name : 'Directeur_Accueil_0'
+    });
+    console.log()
+    }
+
   render(){
     return (
       <View style={styles.container}>
@@ -73,16 +80,24 @@ set4(){
       <ScrollView>
       {renderIf(this.state.selection == 1,
         <View>
-        <Class_croute/>
-        <Club_super_heros/>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <View><Class_croute/></View>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <View><Club_super_heros/></View>
+        </TouchableHighlight>
         </View>
                       )}
 
 
       {renderIf(this.state.selection == 2,
         <View>
-        <Orient_express/>
-        <Tribunal_bacs/>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <View><Orient_express/></View>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <View><Tribunal_bacs/></View>
+        </TouchableHighlight>
         </View>
                        )}
       </ScrollView>
