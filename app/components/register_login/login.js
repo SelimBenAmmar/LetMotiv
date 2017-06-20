@@ -34,6 +34,7 @@ class Login extends React.Component {
     this.props.navigator.push({
       name : 'Directeur_Accueil_0'
     });
+    console.log()
   }
 
   render() {
@@ -93,10 +94,12 @@ var styles = StyleSheet.create({
     margin:20,
   },
 
+
+
   formContainer: {
     width:300,
     alignSelf: 'center',
-    marginHorizontal: 40,
+    marginHorizontal: 60,
     backgroundColor: 'white',
   },
   form: {
@@ -104,13 +107,15 @@ var styles = StyleSheet.create({
   },
   formField: {
     fontSize: 12,
-    width: 300
   },
   icon: {
     flexDirection: 'row',
-    alignSelf:'baseline',
+    alignSelf: 'center',
     fontSize:20,
   },
+
+
+
 
   titleContainer: {
     backgroundColor: '#f39200',
