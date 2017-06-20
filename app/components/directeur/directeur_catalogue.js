@@ -10,8 +10,22 @@ import {
   ScrollView
 } from 'react-native';
 
+export default function renderIf(condition, content) {
+    if (condition) {
+        return content;
+    } else {
+        return null;
+    }
+}
+
 var Bottom_navigation = require('../../util/bottom_navigation');
 var Class_croute = require('../activites/class_croute');
+var Club_super_heros = require('../activites/club_super_heros');
+var Orient_express = require('../activites/orient_express');
+var Tribunal_bacs = require('../activites/tribunal_bacs');
+
+
+
 
 
 class Directeur_Catalogue extends React.Component {
@@ -26,13 +40,17 @@ set1(){
   this.setState({ selection: 1 });
   }
 
-  goToClassCroute(){
-    this.state
-    this.props.navigator.push({
-      name : 'ClassCroute'
-    });
-    console.log()
-  }
+set2(){
+    this.setState({ selection: 2 });
+    }
+
+set3(){
+    this.setState({ selection: 3 });
+    }
+
+set4(){
+    this.setState({ selection: 4 });
+    }
 
   render(){
     return (
@@ -41,17 +59,33 @@ set1(){
       source={require('../../img/logo_bas.png')}
       style={styles.logo}/>
       <ScrollView horizontal>
-      <TouchableHighlight style={styles.formButton} onPress={this.set1.bind(this)} underlayColor='#DA8300'>
-        <Text style={styles.formButtonText}> 1H </Text>
-      </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.goToClassCroute.bind(this)} underlayColor='#DA8300'>
-        <Text style={styles.formButtonText}> 2H </Text>
-        </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.goToClassCroute.bind(this)} underlayColor='#DA8300'>
+        <TouchableHighlight style={styles.formButton} onPress={this.set1.bind(this)} underlayColor='#DA8300'>
+          <Text style={styles.formButtonText}> 1H </Text>
+        </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.set2.bind(this)} underlayColor='#DA8300'>
+          <Text style={styles.formButtonText}> 2H </Text>
+        </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.set3.bind(this)} underlayColor='#DA8300'>
           <Text style={styles.formButtonText}> 4H </Text>
-          </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.goToClassCroute.bind(this)} underlayColor='#DA8300'>
-            <Text style={styles.formButtonText}> Journée </Text>
-      </TouchableHighlight>
+        </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.set4.bind(this)} underlayColor='#DA8300'>
+          <Text style={styles.formButtonText}> Journée </Text>
+        </TouchableHighlight>
       </ScrollView>
 
+      <ScrollView>
+      {renderIf(this.state.selection == 1,
+        <View>
+        <Class_croute/>
+        <Club_super_heros/>
+        </View>
+                      )}
+
+
+      {renderIf(this.state.selection == 2,
+        <View>
+        <Orient_express/>
+        <Tribunal_bacs/>
+        </View>
+                       )}
+      </ScrollView>
 
       <Bottom_navigation/>
       </View>
