@@ -15,10 +15,10 @@ class Directeur_Accueil_0 extends React.Component {
     super(props);
     this.state = {
     isDateTimePickerVisible: false,
-    day_acti: '',
-    date_acti: 'Date',
-    month_acti: '',
-    year_acti: ''
+    day_acti: this.props.day_acti,
+    date_acti: this.props.date_acti,
+    month_acti: this.props.month_acti,
+    year_acti: this.props.year_acti
     }
   };
 
@@ -39,9 +39,15 @@ class Directeur_Accueil_0 extends React.Component {
   // Les fonctionnalités liées au catalogue
   goToCatalogue(){
       this.props.navigator.push({
-        name : 'Directeur_Catalogue'
+        name : 'Directeur_Catalogue',
+        passProps: {
+        day_acti: this.state.day_acti,
+        date_acti: this.state.date_acti,
+        month_acti: this.state.month_acti,
+        year_acti: this.state.year_acti
+      }
       });
-      console.log()
+
       }
 
 
