@@ -83,7 +83,9 @@ class Register extends React.Component {
           <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#DA8300'>
             <Text style={styles.buttonText}>INSCRIPTION</Text>
           </TouchableHighlight>
-          <Text style={styles.footerText}>Vous avez déjà un compte ? <Text style={{fontWeight:'bold'}} onPress={this.goToLogin.bind(this)}>Cliquez ici</Text></Text>
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>Vous avez déjà un compte ? <Text style={{fontWeight:'bold'}} onPress={this.goToLogin.bind(this)}>Cliquez ici</Text></Text>
+          </View>
         </View>
       </View>
     );
@@ -119,59 +121,75 @@ var styles = StyleSheet.create({
     margin:20,
   },
 
+  /*The title of the form*//*The form and its items*/
   formContainer: {
-    width:300,
-    alignSelf: 'stretch',
-    marginHorizontal: 20,
-    backgroundColor: 'white',
+    marginHorizontal: 60,
   },
   form: {
+    width:300,
+    alignSelf: 'center',
     paddingHorizontal:20,
+    backgroundColor: 'white',
   },
   formField: {
     fontSize: 12,
-    alignItems:'center',
+    fontFamily: 'avenir',
+    marginTop:5,
   },
   icon: {
-    alignSelf:'center',
+    flexDirection: 'row',
+    alignSelf: 'center',
     fontSize:20,
   },
 
 
 
-
+/*The title of the form*/
   titleContainer: {
     backgroundColor: '#f39200',
-    alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'stretch',
-    height: 60
+    alignSelf: 'center',
+    height: 60,
+    width: 300,
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
     alignSelf: 'center',
     color: 'white',
+    fontFamily: 'avenir',
+    letterSpacing: 2,
   },
+
+  /*The button of the form*/
   buttonText: {
-    fontSize: 18,
+    fontSize: 15,
     color: 'white',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    fontFamily: 'avenir',
+    letterSpacing: 2,
   },
   button: {
-    zIndex: 1000000,
     width: 340,
     height: 50,
     backgroundColor: '#f39200',
-    marginBottom: 10,
     alignSelf: 'center',
     justifyContent: 'center'
   },
+
+  /*Footer*/
+  footer: {
+    backgroundColor: 'white',
+    width: 300,
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
   footerText: {
     color: '#C7C7CC',
-    fontSize: 14,
+    fontSize: 12,
     alignSelf: 'center',
-    margin: 15,
-  }
+    marginVertical: 10,
+    fontFamily: 'avenir',
+  },
 });
 
 module.exports = Register;
