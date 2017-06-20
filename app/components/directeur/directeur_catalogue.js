@@ -25,9 +25,6 @@ var Orient_express = require('../activites/orient_express');
 var Tribunal_bacs = require('../activites/tribunal_bacs');
 
 
-
-
-
 class Directeur_Catalogue extends React.Component {
   constructor(props) {
     super(props);
@@ -52,11 +49,13 @@ set4(){
     this.setState({ selection: 4 });
     }
 
-goToDirecteur(){
-    this.props.navigator.push({
-      name : 'Directeur_Accueil_0'
-    });
-    console.log()
+    goToDirecteur(a){
+        this.props.navigator.push({
+          name : 'Directeur_Accueil_0',
+            passProps: {
+            activite: a
+          }
+        });
     }
 
   render(){
@@ -80,10 +79,10 @@ goToDirecteur(){
       <ScrollView>
       {renderIf(this.state.selection == 1,
         <View>
-        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Class Croute")} underlayColor='#DA8300'>
         <View><Class_croute/></View>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Club Super Heros")} underlayColor='#DA8300'>
         <View><Club_super_heros/></View>
         </TouchableHighlight>
         </View>
@@ -92,10 +91,10 @@ goToDirecteur(){
 
       {renderIf(this.state.selection == 2,
         <View>
-        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Orient Express")} underlayColor='#DA8300'>
         <View><Orient_express/></View>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+        <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Tribunal Bacs")} underlayColor='#DA8300'>
         <View><Tribunal_bacs/></View>
         </TouchableHighlight>
         </View>
