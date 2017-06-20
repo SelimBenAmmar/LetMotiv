@@ -4,7 +4,8 @@ import {
   Text,
   TouchableHighlight,
   Image,
-  StyleSheet
+  StyleSheet,
+  ScrollView
 } from 'react-native';
 
 
@@ -44,7 +45,6 @@ class Login extends React.Component {
           source={require('../../img/logo_haut.png')}
           style={styles.logo}/>
 
-        <View style={styles.formContainer}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>BONJOUR !</Text>
           </View>
@@ -56,29 +56,30 @@ class Login extends React.Component {
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="ios-person"/>}
               style={styles.formField}
               ref='id'
-              placeholder='Pseudo'/>
+              placeholder='Adresse email'/>
             <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-lock"/>}
               style={styles.formField}
               ref='password'
               placeholder='Mot de Passe'/>
           </Form>
-          <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
+          <TouchableHighlight 
+            style={styles.formButton} 
+            onPress={this.goToDirecteur.bind(this)} 
+            underlayColor='#DA8300'>
             <Text style={styles.formButtonText}>CONNEXION</Text>
           </TouchableHighlight>
           <View style={styles.footer}>
             <Text style={styles.footerText}> Mot de passe oublié ? <Text style={{fontWeight:'900'}}>Cliquez ici</Text></Text>
           </View>
-        </View>
-
         <Image style={styles.separator} source={require('../../img/separator.png')}/>
-
         <TouchableHighlight
-          style={styles.button}
+          style={styles.studentButton}
           onPress={this.goToRegister.bind(this)}
-          underlayColor="white">
-            <Text style={styles.buttonText}> CREER UN COMPTE </Text>
+          underlayColor='#DA8300'>
+            <Text style={styles.studentButtonText}> JE CREE MON COMPTE </Text>
         </TouchableHighlight>
+        <Text style={styles.teacherButtonText}> Encadrant ? <Text style={{fontWeight:'700'}} onPress={this.goToRegister.bind(this)}>Cliquez ici</Text></Text>
       </View>
     );
   }
@@ -134,7 +135,7 @@ var styles = StyleSheet.create({
   title: {
     fontSize: 15,
     alignSelf: 'center',
-    color: 'white',
+    color:'white',
     fontFamily: 'avenir',
     letterSpacing: 2,
   },
@@ -171,26 +172,44 @@ var styles = StyleSheet.create({
   },
 
 
-  button: {
+  studentButton: {
     height: 45,
     alignItems: 'center',
-    flexDirection: 'row',
     backgroundColor: '#f39200',
     borderRadius: 8,
     justifyContent: 'center',
+    marginBottom:15,
   },
-  buttonText: {
+  studentButtonText: {
     fontFamily: 'avenir',
     fontSize: 13,
     letterSpacing: 2,
     color: 'white',
-    marginHorizontal:15,
+    marginHorizontal:20,
+  },
+
+  teacherButton: {
+    height: 30,
+    alignItems: 'center',
+    borderColor:'#ffffff',
+    borderRadius: 8,
+    justifyContent: 'center',
+  },
+  teacherButtonText: {
+    color: '#C7C7CC',
+    fontSize: 12,
+    alignSelf: 'center',
+    marginVertical: 10,
+    fontFamily: 'avenir',
+    marginHorizontal:20,
   },
 
   separator: {
     width:300,
+    height:30,
+    marginTop:20,
+    marginBottom:5,
     resizeMode: 'contain',
-    marginTop:10
   }
 
 });

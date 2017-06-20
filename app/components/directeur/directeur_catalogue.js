@@ -24,7 +24,7 @@ var Club_super_heros = require('../activites/club_super_heros');
 var Orient_express = require('../activites/orient_express');
 var Tribunal_bacs = require('../activites/tribunal_bacs');
 
-
+var activeButton = 0;
 
 
 
@@ -38,18 +38,22 @@ class Directeur_Catalogue extends React.Component {
 
 set1(){
   this.setState({ selection: 1 });
+  activeButton = 1;
   }
 
 set2(){
     this.setState({ selection: 2 });
+    activeButton = 2;
     }
 
 set3(){
     this.setState({ selection: 3 });
+    activeButton = 3;
     }
 
 set4(){
     this.setState({ selection: 4 });
+    activeButton = 4;
     }
 
   render(){
@@ -58,19 +62,22 @@ set4(){
       <Image
       source={require('../../img/logo_bas.png')}
       style={styles.logo}/>
-      <ScrollView horizontal>
-        <TouchableHighlight style={styles.formButton} onPress={this.set1.bind(this)} underlayColor='#DA8300'>
-          <Text style={styles.formButtonText}> 1H </Text>
-        </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.set2.bind(this)} underlayColor='#DA8300'>
-          <Text style={styles.formButtonText}> 2H </Text>
-        </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.set3.bind(this)} underlayColor='#DA8300'>
-          <Text style={styles.formButtonText}> 4H </Text>
-        </TouchableHighlight><TouchableHighlight style={styles.formButton} onPress={this.set4.bind(this)} underlayColor='#DA8300'>
-          <Text style={styles.formButtonText}> Journée </Text>
+      <View style={styles.durationContainer}>
+        <TouchableHighlight style={ activeButton==1 ? styles.durationButtonPress : styles.durationButton } onPress={this.set1.bind(this)} underlayColor='#DA8300'>
+          <Text style={styles.durationText}> 1H </Text>
         </TouchableHighlight>
-      </ScrollView>
+        <TouchableHighlight style={ activeButton==2 ? styles.durationButtonPress : styles.durationButton } onPress={this.set2.bind(this)} underlayColor='#DA8300'>
+          <Text style={styles.durationText}> 2H </Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={ activeButton==3 ? styles.durationButtonPress : styles.durationButton } onPress={this.set3.bind(this)} underlayColor='#DA8300'>
+          <Text style={styles.durationText}> 4H </Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={ activeButton==4 ? styles.durationButtonPress : styles.durationButton } onPress={this.set4.bind(this)} underlayColor='#DA8300'>
+          <Text style={styles.durationText}> 1J </Text>
+        </TouchableHighlight>
+      </View>
 
-      <ScrollView>
+      <ScrollView style={activeButton==0 ? styles.hidden : styles.scrollView} showsVerticalScrollIndicator={false}>
       {renderIf(this.state.selection == 1,
         <View>
         <Class_croute/>
@@ -117,14 +124,37 @@ var styles = StyleSheet.create({
     height: 100,
     width: 100
   },
-  calendar: {
-    height: 300,
-    width: 300
+
+  durationContainer: {
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  durationButton: {
+    height:30,
+    width: 50,
+    backgroundColor: 'white',
+    marginHorizontal: 10,
+    borderRadius:8,
+    paddingTop:6,
+    justifyContent: 'flex-start'
+  },
+  durationButtonPress: {
+    height:45,
+    width: 50,
+    backgroundColor: '#f39200',
+    marginHorizontal: 10,
+    borderRadius:8,
+    paddingTop:6,
+    justifyContent: 'flex-start'
+  },
+  durationText: {
+    alignSelf: 'center',
+    color: '#312783',
   },
   body: {
     color: 'white',
     fontSize: 18,
-    fontFamily: 'futura'
+    fontFamily: 'avenir'
   },
   emphasis: {
     fontWeight: 'bold',
@@ -140,6 +170,19 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     borderColor: 'rgba(0, 0, 0, 0.1)',
+  },
+
+  scrollView: {
+    paddingTop:20,
+    marginTop:-10,
+    backgroundColor: 'white',
+    borderRadius:8,
+    borderColor: '#f39200',
+    width:300,
+    borderWidth:5,
+  },
+  hidden: {
+
   }
 });
 module.exports = Directeur_Catalogue;
