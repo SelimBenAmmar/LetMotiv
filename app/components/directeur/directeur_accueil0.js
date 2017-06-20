@@ -8,6 +8,7 @@ import {
   StyleSheet
 } from 'react-native';
 
+var Directeur_Catalogue = require('./directeur_catalogue');
 var Bottom_navigation = require('../../util/bottom_navigation');
 
 class Directeur_Accueil_0 extends React.Component {
@@ -26,10 +27,16 @@ class Directeur_Accueil_0 extends React.Component {
   _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
   _handleDatePicked = date => {
     this.setState({ date_acti: date.getDate() });
-    this.setState({ date_acti: date.getMonth() + 1 });
-    this.setState({ date_acti: date.getFullYear() });
-    this._hideDateTimePicker();
+    this.setState({ month_acti: date.getMonth() + 1 });
+    this.setState({ year_acti: date.getFullYear() });
+
   };
+
+  goToCatalogue(){
+    this.props.navigator.push({
+      name : 'Directeur_Catalogue'
+    });
+  }
 
   render(){
     return (
@@ -42,9 +49,10 @@ class Directeur_Accueil_0 extends React.Component {
         <Image
         source={require('../../img/calendrier.png')}
         style={styles.calendar}/>
+
       <TouchableOpacity onPress={this._showDateTimePicker}>
         <View style={styles.button}>
-          <Text> C''est parti ! </Text>
+          <Text> Date </Text>
         </View>
       </TouchableOpacity>
       <DateTimePicker
@@ -53,11 +61,18 @@ class Directeur_Accueil_0 extends React.Component {
         onCancel={this._hideDateTimePicker}
         mode={'date'}
       />
+
+      <TouchableOpacity onPress={this.goToCatalogue.bind(this)}>
+        <View style={styles.button}>
+          <Text> Activité </Text>
+        </View>
+      </TouchableOpacity>
       <Bottom_navigation/>
       </View>
     )
   }
 }
+
 
 var styles = StyleSheet.create({
   container: {
