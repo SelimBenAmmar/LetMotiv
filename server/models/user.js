@@ -1,7 +1,7 @@
 // Importing Node packages required for schema
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
-const ROLE_DIRECTEUR = require('../constants').ROLE_DIRECTEUR;
+const ROLE_ENCADRNT = require('../constants').ROLE_ENCADRNT;
 const ROLE_ELEVE = require('../constants').ROLE_ELEVE;
 const ROLE_MEMBER = require('../constants').ROLE_MEMBER;
 
@@ -26,7 +26,7 @@ const UserSchema = new Schema({
   codEtab: { type: String },
   role: {
     type: String,
-    enum: [ROLE_DIRECTEUR, ROLE_ELEVE, ROLE_MEMBER],
+    enum: [ROLE_ENCADRNT, ROLE_ELEVE, ROLE_MEMBER],
     default: ROLE_MEMBER,
     required: true
   },

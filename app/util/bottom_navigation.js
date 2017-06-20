@@ -10,7 +10,6 @@ class Bottom_navigation extends Component {
         labelColor="white"
         rippleColor="white"
         style={{ height: 56, elevation: 8, position: 'absolute', left: 0, bottom: 0, right: 0 }}
-        onTabChange={(newTabIndex) => alert(`New Tab at position ${newTabIndex}`)}
       >
         <Tab
           barBackgroundColor="#f39200"
@@ -43,3 +42,6 @@ class Bottom_navigation extends Component {
 }
 
 module.exports = Bottom_navigation;
+
+/* Dans la définition de la Bottom navigation, si on veut créer un event quand on appuie sur un boutton
+On doit rajouter cette ligne :   onTabChange={(newTabIndex) => alert(`New Tab at position ${newTabIndex}`)}*/
