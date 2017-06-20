@@ -32,9 +32,11 @@ class Login extends React.Component {
 
   goToDirecteur(){
     this.props.navigator.push({
-      name : 'Directeur_Accueil_0'
+      name : 'Directeur_Accueil_0',
+      passProps: {
+      activite: 'Activité'
+    }
     });
-    console.log()
   }
 
   render() {
