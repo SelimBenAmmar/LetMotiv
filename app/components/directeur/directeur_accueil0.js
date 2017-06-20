@@ -15,9 +15,10 @@ class Directeur_Accueil_0 extends React.Component {
     super(props);
     this.state = {
     isDateTimePickerVisible: false,
-    date_acti: 0,
-    month_acti: 0,
-    year_acti: 0
+    day_acti: '',
+    date_acti: 'Date',
+    month_acti: '',
+    year_acti: ''
     }
   };
 
@@ -25,9 +26,13 @@ class Directeur_Accueil_0 extends React.Component {
   _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
   _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
   _handleDatePicked = date => {
+    // Choix du jour de la semaine
+    var days = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    this.setState({ day_acti: days[date.getDay()] });
     this.setState({ date_acti: date.getDate() });
-    this.setState({ date_acti: date.getMonth() + 1 });
-    this.setState({ date_acti: date.getFullYear() });
+    this.setState({ month_acti: months[date.getMonth()] });
+    this.setState({ year_acti: date.getFullYear() });
     this._hideDateTimePicker();
   };
 
@@ -46,10 +51,11 @@ class Directeur_Accueil_0 extends React.Component {
         style={styles.backgroundCalendar}>
           <TouchableOpacity onPress={this._showDateTimePicker}>
             <View style={styles.dateButton}>
-              <Text style={styles.buttonText}> Date </Text>
+              <Text style={styles.buttonText}> {this.state.day_acti} </Text>
+              <Text style={styles.buttonText}> {this.state.date_acti} {this.state.month_acti}  </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={this._showDateTimePicker} style={styles.eventButton}>
+          <TouchableOpacity onPress={this._showDateTimePicke} style={styles.eventButton}>
             <View style={styles.eventButton}>
               <Text style={styles.buttonText}> Event </Text>
             </View>

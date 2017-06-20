@@ -26,7 +26,7 @@ class Login extends React.Component {
 
   goToRegister(){
     this.props.navigator.push({
-      name : 'Register'
+      name : 'Register',
     });
   }
 
@@ -34,7 +34,6 @@ class Login extends React.Component {
     this.props.navigator.push({
       name : 'Directeur_Accueil_0'
     });
-    console.log()
   }
 
   render() {
@@ -97,13 +96,13 @@ var styles = StyleSheet.create({
 
 
   formContainer: {
-    width:300,
-    alignSelf: 'center',
-    marginHorizontal: 60,
-    backgroundColor: 'white',
+    marginHorizontal: 60
   },
   form: {
     paddingHorizontal:20,
+    width:300,
+    alignSelf: 'center',
+    backgroundColor: 'white'
   },
   formField: {
     fontSize: 12,
@@ -121,7 +120,8 @@ var styles = StyleSheet.create({
     backgroundColor: '#f39200',
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'stretch',
+    alignSelf: 'center',
+    width: 300,
     height: 60
   },
   title: {
@@ -141,6 +141,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#f39200',
     marginBottom: 10,
     alignSelf: 'center',
+    overflow:'visible',
     justifyContent: 'center'
   },
   footerText: {
