@@ -4,7 +4,9 @@ import {
   Text,
   TouchableHighlight,
   Image,
-  StyleSheet
+  StyleSheet,
+  ScrollView,
+  DatePickerIOS
 } from 'react-native';
 
 import { Form, InputField,
@@ -27,6 +29,10 @@ class Register extends React.Component {
     this.props.navigator.push({
       name : 'Login'
     });
+  }
+
+  onDateChange(date) {
+    this.setState({date: date});
   }
 
   render() {
@@ -55,13 +61,7 @@ class Register extends React.Component {
               style={styles.formField}
               ref='last_name'
               placeholder='Nom'/>
-
-            <DatePickerField ref='birthday'
-              iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="ios-calendar"/>}
-              style={styles.formField}
-              minimumDate={new Date('1/1/1900')}
-              maximumDate={new Date()} mode='date' placeholder='Date de naissance'/>
-
+    
             <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-lock"/>}
               style={styles.formField}
@@ -80,7 +80,10 @@ class Register extends React.Component {
               ref='code_etablissement'
               placeholder='Code établissement'/>
           </Form>
-          <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#DA8300'>
+          <TouchableHighlight 
+            style={styles.button} 
+            onPress={this.onPress} 
+            underlayColor='#DA8300'>
             <Text style={styles.buttonText}>INSCRIPTION</Text>
           </TouchableHighlight>
           <View style={styles.footer}>
@@ -104,6 +107,13 @@ class Register extends React.Component {
   style={styles.formField}
   ref='phone'
   placeholder='Téléphone'/>
+
+<DatePickerIOS
+              date={new Date()}
+              mode="date"
+              onDateChange={this.onDateChange}
+            />  
+
 */
 
 var styles = StyleSheet.create({
