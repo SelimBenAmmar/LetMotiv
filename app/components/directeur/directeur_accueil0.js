@@ -57,7 +57,7 @@ class Directeur_Accueil_0 extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity onPress={this._showDateTimePicke} style={styles.eventButton}>
             <View style={styles.eventButton}>
-              <Text style={styles.buttonText}> Event </Text>
+              <Text style={styles.buttonText}> {this.props.activite} </Text>
             </View>
           </TouchableOpacity>
           <DateTimePicker
