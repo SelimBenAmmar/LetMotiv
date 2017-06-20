@@ -46,7 +46,7 @@ class Login extends React.Component {
 
         <View style={styles.formContainer}>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>BIENVENUE !</Text>
+            <Text style={styles.title}>BONJOUR !</Text>
           </View>
           <Form
             ref="form"
@@ -66,13 +66,18 @@ class Login extends React.Component {
           <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this)} underlayColor='#DA8300'>
             <Text style={styles.formButtonText}>CONNEXION</Text>
           </TouchableHighlight>
+          <View style={styles.footer}>
+            <Text style={styles.footerText}> Mot de passe oublié ? <Text style={{fontWeight:'900'}}>Cliquez ici</Text></Text>
+          </View>
         </View>
+
+        <Image style={styles.separator} source={require('../../img/separator.png')}/>
 
         <TouchableHighlight
           style={styles.button}
           onPress={this.goToRegister.bind(this)}
           underlayColor="white">
-            <Text style={{color: 'white'}}> CREER UN COMPTE </Text>
+            <Text style={styles.buttonText}> CREER UN COMPTE </Text>
         </TouchableHighlight>
       </View>
     );
@@ -95,18 +100,20 @@ var styles = StyleSheet.create({
   },
 
 
-
+  /*The form and its items*/
   formContainer: {
-    width:300,
-    alignSelf: 'center',
     marginHorizontal: 60,
-    backgroundColor: 'white',
   },
   form: {
+    width:300,
+    alignSelf: 'center',
     paddingHorizontal:20,
+    backgroundColor: 'white',
   },
   formField: {
     fontSize: 12,
+    fontFamily: 'avenir',
+    marginTop:5,
   },
   icon: {
     flexDirection: 'row',
@@ -116,51 +123,74 @@ var styles = StyleSheet.create({
 
 
 
-
+  /*The title of the form*/
   titleContainer: {
     backgroundColor: '#f39200',
-    alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'stretch',
-    height: 60
+    alignSelf: 'center',
+    height: 60,
+    width: 300,
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
     alignSelf: 'center',
     color: 'white',
+    fontFamily: 'avenir',
+    letterSpacing: 2,
   },
+
+  /*The button of the form*/
   formButtonText: {
-    fontSize: 18,
+    fontSize: 15,
     color: 'white',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    fontFamily: 'avenir',
+    letterSpacing: 2,
   },
   formButton: {
-    zIndex: 1000000,
     width: 340,
     height: 50,
     backgroundColor: '#f39200',
-    marginBottom: 10,
     alignSelf: 'center',
     justifyContent: 'center'
   },
+
+  /*Footer*/
+  footer: {
+    backgroundColor: 'white',
+    width: 300,
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
   footerText: {
     color: '#C7C7CC',
-    fontSize: 14,
+    fontSize: 12,
     alignSelf: 'center',
-    margin: 15,
+    marginVertical: 10,
+    fontFamily: 'avenir',
   },
 
 
   button: {
     height: 45,
-    width: 150,
     alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: '#f39200',
     borderRadius: 8,
-    marginBottom: 10,
-    marginTop: 10,
     justifyContent: 'center',
+  },
+  buttonText: {
+    fontFamily: 'avenir',
+    fontSize: 13,
+    letterSpacing: 2,
+    color: 'white', 
+    marginHorizontal:15,
+  },
+
+  separator: {
+    width:300,
+    resizeMode: 'contain',
+    marginTop:10
   }
 
 });
