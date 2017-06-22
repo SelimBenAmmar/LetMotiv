@@ -19,7 +19,7 @@ class ClassCroute extends React.Component {
             <Text style={styles.titre}> Class’Croute </Text>
 
             <Text style={styles.body}> Débat lors d’un pique-nique ou un repas au
-            self entres élèves sur les «métiers du futur».
+            self entres élèves sur les « métiers du futur ».
             Nombre d’organisateurs conseillé : 5 </Text>
         </View>
 
@@ -54,11 +54,11 @@ class ClassCroute extends React.Component {
       backgroundColor: 'white',
     },
     summary: {
-      flexDirection: 'row',
+
     },
     logo: {
-      height: 60,
-      width: 60,
+      height: 100,
+      width: 100,
       margin:20,
     },
 

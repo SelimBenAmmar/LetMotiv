@@ -46,6 +46,7 @@ class Login extends React.Component {
 
   render() {
     return (
+      <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
         <Image
           source={require('../../img/logo_haut.png')}
@@ -59,12 +60,12 @@ class Login extends React.Component {
             style={styles.form}
             onChange={this.handleFormChange.bind(this)}>
             <InputField
-              iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="ios-person"/>}
+              
               style={styles.formField}
               ref='id'
               placeholder='Adresse email'/>
             <InputField
-              iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-lock"/>}
+              
               style={styles.formField}
               ref='password'
               placeholder='Mot de Passe'/>
@@ -87,6 +88,7 @@ class Login extends React.Component {
         </TouchableHighlight>
         <Text style={styles.teacherButtonText}> Encadrant ? <Text style={{fontWeight:'700'}} onPress={this.goToRegister.bind(this)}>Cliquez ici</Text></Text>
       </View>
+      </ScrollView>
     );
   }
 }
@@ -96,8 +98,12 @@ var styles = StyleSheet.create({
     flex:1,
     justifyContent: 'center',
     alignItems:'center',
-    marginTop: 50,
     padding: 20,
+    paddingTop:100,
+    backgroundColor: '#312783',
+  },
+  scrollContainer: {
+    flex:1,
     backgroundColor: '#312783',
   },
   logo: {

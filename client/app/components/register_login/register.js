@@ -37,6 +37,7 @@ class Register extends React.Component {
 
   render() {
     return (
+      <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
         <Image
           source={require('../../img/logo_haut.png')}
@@ -51,31 +52,26 @@ class Register extends React.Component {
             onChange={this.handleFormChange.bind(this)}>
 
             <InputField
-              iconLeft={<IconMI style={styles.icon} color="#C7C7CC" name="person"/>}
               style={styles.formField}
               ref='first_name'
               placeholder='Prénom'/>
 
             <InputField
-              iconLeft={<IconMI style={styles.icon} size={24} color="#C7C7CC" name="person"/>}
               style={styles.formField}
               ref='last_name'
               placeholder='Nom'/>
     
             <InputField
-              iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-lock"/>}
               style={styles.formField}
               ref='password'
               placeholder='Mot de Passe'/>
 
             <InputField
-              iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="ios-mail"/>}
               style={styles.formField}
               ref='mail'
               placeholder='Adresse email'/>
 
             <InputField
-              iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-home"/>}
               style={styles.formField}
               ref='code_etablissement'
               placeholder='Code établissement'/>
@@ -91,6 +87,7 @@ class Register extends React.Component {
           </View>
         </View>
       </View>
+      </ScrollView>
     );
   }
 }
@@ -119,10 +116,14 @@ class Register extends React.Component {
 var styles = StyleSheet.create({
   container: {
     flex:1,
+    padding:20,
+    paddingTop:80,
     justifyContent: 'center',
     alignItems:'center',
-    marginTop: 50,
-    padding: 20,
+    backgroundColor: '#312783',
+  },
+  scrollContainer: {
+    flex:1,
     backgroundColor: '#312783',
   },
   logo: {

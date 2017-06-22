@@ -91,7 +91,6 @@ class Directeur_Accueil_0 extends React.Component {
 
 var styles = StyleSheet.create({
   container: {
-    marginTop: 65,
     flex: 1,
     flexDirection: 'column',
     alignItems:'center',
