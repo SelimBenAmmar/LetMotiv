@@ -19,20 +19,47 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 
 class Register extends React.Component {
 
-  handleFormChange(formData){
-    if (formData) { // if validation fails, value will be null
-      console.log(formData); // value here is an instance of Person
-    }
-  }
-
   goToLogin(){
     this.props.navigator.push({
       name : 'Login'
     });
   }
 
-  onDateChange(date) {
-    this.setState({date: date});
+  /* Asynchronous storage is the database that will contain the tokens and the data.
+  The asynchronous storage is shared between all the apps of the smartphone. */
+  async _onValueChange(item, selectedValue) {
+        try {
+            await AsyncStorage.setItem(item, selectedValue);
+        } catch (error) {
+            console.log('AsyncStorage error: ' + error.message);
+        }
+    }
+
+
+    onPress(formData){
+    if (formData) { // if validation fails, formData will be null
+        console.log(formData);
+        fetch("http://localhost:3001/users", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                first_name: formData.first_name,
+                last_name: formData.last_name,
+                password: formData.password,
+                mail: formData.mail,
+                code_etablissement: formData.code_etablissement
+            })
+        })
+        .then((response) => console.log(response.json()))
+        .then((responseData) => {
+            this._onValueChange(STORAGE_KEY, responseData.id_token);
+            console.log("Signup Success!");
+        })
+        .done();
+    }
   }
 
   render() {
@@ -47,8 +74,7 @@ class Register extends React.Component {
           </View>
           <Form
             ref="form"
-            style={styles.form}
-            onChange={this.handleFormChange.bind(this)}>
+            style={styles.form}>
 
             <InputField
               iconLeft={<IconMI style={styles.icon} color="#C7C7CC" name="person"/>}
@@ -61,7 +87,7 @@ class Register extends React.Component {
               style={styles.formField}
               ref='last_name'
               placeholder='Nom'/>
-    
+
             <InputField
               iconLeft={<Ionicon style={styles.icon} size={24} color="#C7C7CC" name="md-lock"/>}
               style={styles.formField}
@@ -80,9 +106,9 @@ class Register extends React.Component {
               ref='code_etablissement'
               placeholder='Code établissement'/>
           </Form>
-          <TouchableHighlight 
-            style={styles.button} 
-            onPress={this.onPress} 
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this.onPress}
             underlayColor='#DA8300'>
             <Text style={styles.buttonText}>INSCRIPTION</Text>
           </TouchableHighlight>
@@ -95,26 +121,6 @@ class Register extends React.Component {
   }
 }
 
-/* Demander les informations sur le sexe et le numéro de téléphone si besoin
-<PickerField
-  style={styles.formField} ref='gender' placeholder='Genre'
-  options={{
-    female: 'Feminin',
-    male: 'Masculin'
-}}/>
-<InputField
-  iconLeft={<IconMI style={styles.icon} size={24} color="#C7C7CC" name="phone"/>}
-  style={styles.formField}
-  ref='phone'
-  placeholder='Téléphone'/>
-
-<DatePickerIOS
-              date={new Date()}
-              mode="date"
-              onDateChange={this.onDateChange}
-            />  
-
-*/
 
 var styles = StyleSheet.create({
   container: {
