@@ -1,48 +1,36 @@
 {
-  "name": "mern-starter-server",
-  "version": "1.0.0",
-  "description": "API server for MERN Starter, powered by Express.",
-  "main": "index.js",
+  "name": "in-memory-todo",
+  "version": "0.1.0",
+  "description": "An In memory todo for Logged in and not Logged in users",
+  "main": "server.js",
   "scripts": {
-    "test": "mocha -S --ui bdd --require ./tests/spec_helper.js --recursive ./tests --reporter spec",
-    "startdev": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/auth0/nodejs-jwt-authentication-sample.git"
   },
   "keywords": [
-    "mern",
-    "api",
-    "server-side"
+    "jwt",
+    "auth0"
   ],
-  "author": "Joshua Slate",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4",
-    "jsonwebtoken": "^5.7.0",
-    "mailchimp-v3": "^1.0.1",
-    "mailgun-js": "^0.7.10",
-    "moment": "^2.13.0",
-    "mongoose": "^4.4.13",
-    "morgan": "^1.7.0",
-    "passport": "^0.3.2",
-    "passport-jwt": "^2.0.0",
-    "passport-local": "^1.0.0",
-    "sendgrid": "^4.7.1",
-    "socket.io": "^1.4.6",
-    "react": "16.0.0-alpha.3",
-    "react-native": "0.43.2",
-    "react-navigation": "git+https://github.com/react-community/react-navigation.git#7edd9a7"
+  "author": "Martin Gontovnikas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auth0/in-memory-todo/issues"
   },
-  "devDependencies": {
-    "babel-eslint": "^7.1.0",
-    "eslint": "^3.9.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.6.0",
-    "mocha": "^3.2.0",
-    "should": "^11.1.1",
-    "supertest": "^2.0.0",
-    "nodemon": "^1.11.0"
+  "homepage": "https://github.com/auth0/in-memory-todo",
+  "dependencies": {
+    "body-parser": "^1.6.5",
+    "compression": "^1.0.11",
+    "cors": "^2.4.1",
+    "dotenv": "^0.4.0",
+    "errorhandler": "^1.1.1",
+    "express": "^4.8.5",
+    "express-jwt": "^0.3.1",
+    "jsonwebtoken": "^5.0.1",
+    "lodash": "^2.4.1",
+    "morgan": "^1.2.3"
   }
 }
+
