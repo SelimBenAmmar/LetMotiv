@@ -14,33 +14,10 @@
     "jwt",
     "auth0"
   ],
-<<<<<<< Updated upstream
-  "author": "Joshua Slate",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4",
-    "jsonwebtoken": "^5.7.0",
-    "mailchimp-v3": "^1.0.1",
-    "mailgun-js": "^0.7.10",
-    "moment": "^2.13.0",
-    "mongoose": "^4.4.13",
-    "morgan": "^1.7.0",
-    "passport": "^0.3.2",
-    "passport-jwt": "^2.0.0",
-    "passport-local": "^1.0.0",
-    "sendgrid": "^4.7.1",
-    "socket.io": "^1.4.6",
-    "react": "16.0.0-alpha.3",
-    "react-native": "0.43.2",
-    "react-navigation": "git+https://github.com/react-community/react-navigation.git#7edd9a7"
-=======
   "author": "Martin Gontovnikas",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/auth0/in-memory-todo/issues"
->>>>>>> Stashed changes
   },
   "homepage": "https://github.com/auth0/in-memory-todo",
   "dependencies": {
