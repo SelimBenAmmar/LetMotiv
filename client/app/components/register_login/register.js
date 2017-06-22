@@ -18,12 +18,33 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 
 
 class Register extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    first_name: '',
+    last_name: '',
+    password: '',
+    email: '',
+    code_etablissement: ''
+    }
+  };
 
   goToLogin(){
     this.props.navigator.push({
       name : 'Login'
     });
   }
+
+  handleChange(formData){
+    this.setState({
+      first_name: formData.first_name,
+      last_name: formData.last_name,
+      password: formData.password,
+      email: formData.email,
+      code_etablissement: formData.code_etablissement
+    });
+  }
+
 
   /* Asynchronous storage is the database that will contain the tokens and the data.
   The asynchronous storage is shared between all the apps of the smartphone. */
@@ -36,9 +57,7 @@ class Register extends React.Component {
     }
 
 
-    onPress(formData){
-    if (formData) { // if validation fails, formData will be null
-        console.log(formData);
+    handleSubmit(){
         fetch("http://localhost:3001/users", {
             method: "POST",
             headers: {
@@ -46,11 +65,11 @@ class Register extends React.Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                first_name: formData.first_name,
-                last_name: formData.last_name,
-                password: formData.password,
-                mail: formData.mail,
-                code_etablissement: formData.code_etablissement
+                first_name: this.state.first_name,
+                last_name: this.state.last_name,
+                password: this.state.password,
+                email: this.state.email,
+                code_etablissement: this.state.code_etablissement
             })
         })
         .then((response) => console.log(response.json()))
@@ -60,7 +79,6 @@ class Register extends React.Component {
         })
         .done();
     }
-  }
 
   render() {
     return (
@@ -75,7 +93,8 @@ class Register extends React.Component {
           </View>
           <Form
             ref="form"
-            style={styles.form}>
+            style={styles.form}
+            onChange={this.handleChange.bind(this)}>
 
             <InputField
               style={styles.formField}
@@ -94,7 +113,7 @@ class Register extends React.Component {
 
             <InputField
               style={styles.formField}
-              ref='mail'
+              ref='email'
               placeholder='Adresse email'/>
 
             <InputField
@@ -104,7 +123,7 @@ class Register extends React.Component {
           </Form>
           <TouchableHighlight
             style={styles.button}
-            onPress={this.onPress}
+            onPress={this.handleSubmit.bind(this)}
             underlayColor='#DA8300'>
             <Text style={styles.buttonText}>INSCRIPTION</Text>
           </TouchableHighlight>
