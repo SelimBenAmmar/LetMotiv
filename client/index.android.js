@@ -24,6 +24,7 @@ var Directeur_Catalogue = require('./app/components/directeur/directeur_catalogu
 
 // ------------------- import Eleve related pages  -------------------------------------
 var Eleve = require('./app/components/eleve/eleve_accueil');
+var Prochaine_Activite = require('./app/components/eleve/prochaine_activite');
 
 // ------------------- import Activites related pages  -------------------------------------
 var ClassCroute = require('./app/components/activites/class_croute');
@@ -61,6 +62,10 @@ class test_project extends React.Component {
     /* ----------------- Les routes de l'interface de l'élève ------------------ */
    if(route.name == 'Eleve') {
      return <Eleve navigator={navigator} />
+   }
+
+   if(route.name == 'Prochaine_Activite') {
+     return <Prochaine_Activite navigator={navigator} />
    }
 
    /* ----------------- Les routes liées aux activités ------------------ */
