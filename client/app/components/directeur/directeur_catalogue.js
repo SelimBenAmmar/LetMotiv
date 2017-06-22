@@ -24,7 +24,8 @@ var Club_super_heros = require('../activites/club_super_heros');
 var Orient_express = require('../activites/orient_express');
 var Tribunal_bacs = require('../activites/tribunal_bacs');
 
-var activeButton = 0;
+var activeButton = 1;
+
 
 
 class Directeur_Catalogue extends React.Component {
@@ -59,18 +60,18 @@ set4(){
     activeButton = 4;
     }
 
-    goToDirecteur(a){
-        this.props.navigator.push({
-          name : 'Directeur_Accueil_0',
-            passProps: {
-            activite: a,
-            day_acti: this.state.day_acti,
-            date_acti: this.state.date_acti,
-            month_acti: this.state.month_acti,
-            year_acti: this.state.year_acti
-          }
-        });
-    }
+  goToDirecteur(a){
+      this.props.navigator.push({
+        name : 'Directeur_Accueil_0',
+          passProps: {
+          activite: a,
+          day_acti: this.state.day_acti,
+          date_acti: this.state.date_acti,
+          month_acti: this.state.month_acti,
+          year_acti: this.state.year_acti
+        }
+      });
+  }
 
   render(){
     return (
@@ -93,30 +94,29 @@ set4(){
         </TouchableHighlight>
       </View>
 
-      <ScrollView style={activeButton==0 ? styles.hidden : styles.scrollView} showsVerticalScrollIndicator={false}>
+      
       {renderIf(this.state.selection == 1,
-        <View>
+        <ScrollView style={activeButton==1 ? styles.scrollView : styles.hidden} showsVerticalScrollIndicator={false}>
         <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Class Croute")} underlayColor='#DA8300'>
         <View><Class_croute/></View>
         </TouchableHighlight>
         <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Club Super Heros")} underlayColor='#DA8300'>
         <View><Club_super_heros/></View>
         </TouchableHighlight>
-        </View>
+        </ScrollView>
                       )}
 
 
       {renderIf(this.state.selection == 2,
-        <View>
+        <ScrollView style={activeButton==2 ? styles.scrollView : styles.hidden} showsVerticalScrollIndicator={false}>
         <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Orient Express")} underlayColor='#DA8300'>
         <View><Orient_express/></View>
         </TouchableHighlight>
         <TouchableHighlight style={styles.formButton} onPress={this.goToDirecteur.bind(this,"Tribunal Bacs")} underlayColor='#DA8300'>
         <View><Tribunal_bacs/></View>
         </TouchableHighlight>
-        </View>
+        </ScrollView>
                        )}
-      </ScrollView>
 
       <Bottom_navigation/>
       </View>
@@ -137,12 +137,11 @@ set4(){
 
 var styles = StyleSheet.create({
   container: {
-    marginTop: 65,
     flex: 1,
     flexDirection: 'column',
     alignItems:'center',
     backgroundColor: '#312783',
-    padding: 30
+    paddingTop:70,
   },
   logo: {
     height: 100,
@@ -154,8 +153,8 @@ var styles = StyleSheet.create({
     marginTop: 20,
   },
   durationButton: {
-    height:30,
-    width: 50,
+    height:45,
+    width: 70,
     backgroundColor: 'white',
     marginHorizontal: 10,
     borderRadius:8,
@@ -164,8 +163,8 @@ var styles = StyleSheet.create({
   },
   durationButtonPress: {
     height:45,
-    width: 50,
-    backgroundColor: '#f39200',
+    width: 70,
+    backgroundColor: '#a5abc7',
     marginHorizontal: 10,
     borderRadius:8,
     paddingTop:6,
@@ -174,6 +173,7 @@ var styles = StyleSheet.create({
   durationText: {
     alignSelf: 'center',
     color: '#312783',
+    fontFamily:'avenir',
   },
   body: {
     color: 'white',
@@ -201,8 +201,7 @@ var styles = StyleSheet.create({
     marginTop:-10,
     backgroundColor: 'white',
     borderRadius:8,
-    borderColor: '#f39200',
-    width:300,
+    borderColor: '#a5abc7',
     borderWidth:5,
   },
   hidden: {

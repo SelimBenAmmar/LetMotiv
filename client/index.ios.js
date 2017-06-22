@@ -52,10 +52,10 @@ class test_project extends React.Component {
 
    /* ----------------- Les routes de l'interface du directeur ------------------ */
    if(route.name == 'Directeur_Accueil_0') {
-     return <Directeur_Accueil_0 navigator={navigator}/>
+     return <Directeur_Accueil_0 navigator={navigator} {...route.passProps}/>
    }
    if(route.name == 'Directeur_Catalogue') {
-     return <Directeur_Catalogue navigator={navigator} />
+     return <Directeur_Catalogue navigator={navigator} {...route.passProps}/>
    }
 
     /* ----------------- Les routes de l'interface de l'élève ------------------ */
