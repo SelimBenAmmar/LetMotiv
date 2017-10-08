@@ -5,3 +5,7 @@ Then, a chatbot in the app will help him understand and reflect on what he learn
 Check out our website for more detail on the project ! --> http://www.first2017equipe1.fr
 
 This project is made possible by the Fondation Mines-Télécom with their open-innovation program, the program FIRST. --> https://programmefirst.agorize.com/fr/challenges/programmefirst
+
+
+## ToDo
+1- Connect Pascal to Postgres
