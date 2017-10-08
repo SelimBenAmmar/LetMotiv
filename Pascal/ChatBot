@@ -1,0 +1,25 @@
+ChatBot Meetup TPT:
+- La co-construction : le tryptique (start up/établissement/ étudiant)
+=> Inclure les élèves dans la construction, pas seulement notre client qui est l'établissement.
+- Adaptive learning
+- Le chatbot est un Agent as a Service. Il prend les émotions en considération. 
+- ILs utilisent le language Go 
+- Le but de notre bot c'est quoi ? La construction se fera dans cet axe.
+- Chatbot ou quick reply ?
+- Intégrer les amis de l'étudiant dans le bot. 
+
+L'échange permanent entre le trio:
+- Chatfuel (Dépendance de chatfuel et que faire avec les données de nos utilisateurs)
+- node server (récupére la conversation)
+- Messenger, facebook
+
+- Discover tab
+- Pourquoi chatfuel ? Éthique de la dépendance ? 
+
+- Notre révolution n'est pas le chatbot. Il sera simple à faire vu que c'est le chatbot qui démarre et pose les questions.
+- Notre innovation c'est l'algorithme qui va analyser les phrases rédigées par l'élève pour les transformer en graphe.  
+
+- Catch utilisé pour faire les arbres
+- Partage des arbres sur envision
+- Développer avec Scala
+- Facebook Analytics : suivi de ce qui se passe dans les bots (combien d'utilisateurs finissent le quiz, le font...)

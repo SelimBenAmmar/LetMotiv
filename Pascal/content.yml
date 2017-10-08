@@ -1,0 +1,15 @@
+welcome:
+  - typing: true
+    text: # Picks one randomly
+      - Salut {{user.first_name}}.
+      - Salut toi :)
+      - Coucou
+  - text: Tu vas bien ?
+    quick_replies:
+      - <.B1> Oui #Starting with a '.' before B1 will prepend the name of the bloc in uppercase
+      - <.B2> Pas vraiment
+
+goodbye:
+  - text: You are leaving because of reason {{reason}}
+    typing: true
+  - Hope to see you back again soon! # if no other properties, you can just send a strings
