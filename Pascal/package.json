@@ -1,18 +1,16 @@
 {
   "name": "pascal",
   "version": "0.0.1",
-  "description": "The bot of the company Letmotiv",
+  "description": "Letmotiv chatbot Pascal",
   "main": "index.js",
   "dependencies": {
     "botpress": "1.x",
-    "botpress-broadcast": "^2.0.10",
-    "botpress-messenger": "^2.2.4",
     "botpress-web": "1.x"
   },
   "scripts": {
     "start": "botpress start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Letmotiv team",
+  "author": "Letmotiv",
   "license": "Botpress Proprietary License"
 }
