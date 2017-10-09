@@ -1,7 +1,7 @@
 {
   "name": "pascal",
   "version": "0.0.1",
-  "description": "Letmotiv chatbot Pascal",
+  "description": "letmotiv chatbot",
   "main": "index.js",
   "dependencies": {
     "botpress": "1.x",
@@ -11,6 +11,6 @@
     "start": "botpress start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Letmotiv",
+  "author": "letmotiv",
   "license": "Botpress Proprietary License"
 }

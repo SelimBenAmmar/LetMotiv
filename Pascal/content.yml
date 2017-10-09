@@ -16,3 +16,72 @@ goodbye:
   - text: You are leaving because of reason {{reason}}
     typing: true
   - Hope to see you back again soon! # if no other properties, you can just send a strings
+
+
+
+
+
+Q_NumberOfQuestionsToAsk:
+  - text: {{user.first_name}}, je vais te poser {{number_of_questions_to_ask}} questions qui me permettrons de remettre à jour
+  ton arbre de compétences et d'intelligences. C'est bon pour toi?
+    typing: true
+
+
+
+
+
+Q_LikeTheActivity:
+- text: Pour commencer, raconte moi, c'était comment {{activity_name}}?
+    typing: true
+
+R+_LikeTheActivity:
+- text: Sincérement, j'ai jamais compris les émotions, mais si tu es heureux, alors je le suis aussi :)?
+    typing: true
+
+R-_LikeTheActivity:
+- text: Oh... J'avoue que ce n'est pas si évident d'être {{user.role}}. J'espère que tu préféreras ton prochain rôle.
+    typing: true
+
+
+
+
+Q_lastMinuteDifficulties:
+- text:  Maintenant, en organisant {{activity_name}}, as-tu rencontré des difficultés de dernière minute?
+    typing: true
+
+R+_lastMinuteDifficulties:
+- text: Des imprévus, y en a toujours. Sur une échelle de 1 à 4, à quel point as-tu pu garder ton calme lors de la résolution de ces problèmes?
+    typing: true
+
+R+_12_lastMinuteDifficulties:
+- text: Mes maîtres m'ont dit un jour: "Pascal, keep calm and be happy". :)
+    typing: true
+- text: Sors de temps en temps de ta zone de confort, pour t'entrainer à maîtriser ton stress.
+    typing: true
+
+R+_34_lastMinuteDifficulties:
+- text: "Rester calme est une qualité très précieuse!" Citation signée Maître Pascal
+    typing: true
+
+R-_lastMinuteDifficulties:
+- text: Bien joué ;) C'est assez rare d'organiser une activité sans rencontrer d'imprévus.
+    typing: true
+
+
+
+
+Q_GroupGoal:
+- text: Je voulais aussi te demander si tu t'es suffisamment assuré que l'objectif du groupe soit atteint ?
+    typing: true
+
+R-_GroupGoal:
+- text: Ne t'inquiéte pas, ce n'est pas si évident d'être coordinateur...
+    typing: true
+
+
+
+
+Q_Deadlines:
+- text: {{question_order}}: Est-ce que tous les autres membres de l'équipe ont pu finir leurs tâches à temps?
+    typing: true
+

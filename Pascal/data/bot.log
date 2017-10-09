@@ -1,10 +1,25 @@
-{"level":"info","message":"Starting botpress version 1.1.2","timestamp":"2017-10-08T14:42:24.771Z"}
-{"level":"verbose","message":"[UMM] Enabled for web","timestamp":"2017-10-08T14:42:26.201Z"}
-{"level":"info","message":"Loaded botpress-web, version 1.2.3","timestamp":"2017-10-08T14:42:26.202Z"}
-{"level":"info","message":"Loaded 1 modules","timestamp":"2017-10-08T14:42:26.203Z"}
-{"level":"debug","message":"Loading middleware: UMM.instrumentation","timestamp":"2017-10-08T14:42:26.237Z"}
-{"level":"debug","message":"Loading middleware: hear","timestamp":"2017-10-08T14:42:26.237Z"}
-{"level":"debug","message":"Loading middleware: conversations","timestamp":"2017-10-08T14:42:26.238Z"}
-{"level":"debug","message":"Loading middleware: web.sendMessages","timestamp":"2017-10-08T14:42:26.238Z"}
-{"level":"debug","message":"Loading middleware: fallback","timestamp":"2017-10-08T14:42:26.239Z"}
-{"level":"info","message":"\u001b[32m\u001b[1mBot launched. Visit: http://localhost:3000\u001b[22m\u001b[39m","timestamp":"2017-10-08T14:42:26.323Z"}
+{"level":"info","message":"Starting botpress version 1.1.2","timestamp":"2017-10-09T17:24:25.839Z"}
+{"level":"verbose","message":"[UMM] Enabled for web","timestamp":"2017-10-09T17:24:26.357Z"}
+{"level":"info","message":"Loaded botpress-web, version 1.2.3","timestamp":"2017-10-09T17:24:26.358Z"}
+{"level":"info","message":"Loaded 1 modules","timestamp":"2017-10-09T17:24:26.359Z"}
+{"level":"debug","message":"Loading middleware: UMM.instrumentation","timestamp":"2017-10-09T17:24:26.388Z"}
+{"level":"debug","message":"Loading middleware: hear","timestamp":"2017-10-09T17:24:26.389Z"}
+{"level":"debug","message":"Loading middleware: conversations","timestamp":"2017-10-09T17:24:26.390Z"}
+{"level":"debug","message":"Loading middleware: web.sendMessages","timestamp":"2017-10-09T17:24:26.390Z"}
+{"level":"debug","message":"Loading middleware: fallback","timestamp":"2017-10-09T17:24:26.391Z"}
+{"level":"info","message":"\u001b[32m\u001b[1mBot launched. Visit: http://localhost:3000\u001b[22m\u001b[39m","timestamp":"2017-10-09T17:24:26.450Z"}
+{"level":"error","message":"Could not fetch modules","timestamp":"2017-10-09T18:14:20.893Z"}
+{"level":"debug","message":"Fetched invalid modules. Report this to the Botpress Team.","timestamp":"2017-10-09T18:14:20.894Z"}
+{"level":"info","message":"Installing modules: botpress-messenger","timestamp":"2017-10-09T18:15:33.106Z"}
+{"level":"error","message":"npm","timestamp":"2017-10-09T18:18:25.195Z"}
+{"level":"error","message":" ERR! Darwin 16.7.0\nnpm ERR! argv \"/Users/SelimBAM/.nvm/versions/node/v7.10.1/bin/node\" \"/Users/SelimBAM/.nvm/versions/node/v7.10.1/bin/npm\" \"install\" \"--save\" \"botpress-messenger\"\nnpm ERR! node v7.10.1\nnpm ERR! npm  v4.2.0\nnpm ERR! code ECONNRESET\nnpm ERR! errno","timestamp":"2017-10-09T18:18:25.195Z"}
+{"level":"error","message":" ECONNRESET\nnpm ERR! syscall read\n","timestamp":"2017-10-09T18:18:25.196Z"}
+{"level":"error","message":"\n","timestamp":"2017-10-09T18:18:25.198Z"}
+{"level":"error","message":"npm ","timestamp":"2017-10-09T18:18:25.199Z"}
+{"level":"error","message":"ERR! network read ECONNRESET\nnpm ERR! network This is most likely not a problem with npm itself\nnpm ERR! network and is related to network connectivity.\nnpm ERR! network In most cases you are behind a proxy or have bad network settings.\nnpm ERR! network \nnpm ERR! network If you are behind a proxy, please make sure that the\nnpm ERR! network 'proxy' config is set properly.  See: 'npm help config'\n","timestamp":"2017-10-09T18:18:25.199Z"}
+{"level":"error","message":"npm","timestamp":"2017-10-09T18:18:25.234Z"}
+{"level":"error","message":" ERR! Darwin 16.7.0\nnpm ERR! argv \"/Users/SelimBAM/.nvm/versions/node/v7.10.1/bin/node\" \"/Users/SelimBAM/.nvm/versions/node/v7.10.1/bin/npm\" \"install\" \"--save\" \"botpress-messenger\"\nnpm ERR! node v7.10.1\nnpm ERR! npm  v4.2.0\n\nnpm ERR!","timestamp":"2017-10-09T18:18:25.235Z"}
+{"level":"error","message":" shasum check failed for /var/folders/dt/lfy6lfzd10nccch9ml30qg8c0000gn/T/npm-17820-a4bcd327/registry.npmjs.org/react-audio-player/-/react-audio-player-0.5.0.tgz\nnpm ERR! Expected: c13be7cfbc09e46503b44ac42a043e48dc952e5c\nnpm ERR! Actual:   22c48bf1514d640528ef81980f39f296573f4a00\nnpm ERR! From:     https://registry.npmjs.org/react-audio-player/-/react-audio-player-0.5.0.tgz\nnpm ERR! \nnpm ERR! If you need help, you may report this error at:\nnpm ERR!     <https://github.com/npm/npm/issues>\n","timestamp":"2017-10-09T18:18:25.236Z"}
+{"level":"error","message":"\n","timestamp":"2017-10-09T18:18:25.237Z"}
+{"level":"error","message":"npm ERR! Please include the following file with any support request:\nnpm ERR!     /Users/SelimBAM/.npm/_logs/2017-10-09T18_18_25_204Z-debug.log\n","timestamp":"2017-10-09T18:18:25.237Z"}
+{"level":"error","message":"An error occurred during modules installation.","timestamp":"2017-10-09T18:18:25.251Z"}
