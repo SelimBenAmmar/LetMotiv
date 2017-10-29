@@ -2,10 +2,10 @@
 welcome:
   - typing: true
     text:
-      - Coucou {{fb_first_name}}
+      - Coucou {{user.first_name}}
       - Hello {{user.first_name}}
       - Salut toi
-  - text: Ton robot préféré Pascal est de retour
+  - text: Ton robot préféré Pascal est de retour ;)
     typing: 1s
   - text:
       - Tu vas bien ?
@@ -45,9 +45,9 @@ Q_NumberOfQuestionsToAsk:
 Q_LikeTheActivity:
   - typing: 1s
     text: Pour commencer, raconte moi, c'était comment {{activity_name}}?
-     quick_replies:
-       - <QR_LKE_ACTIVITY> J'ai bien aimé
-       - <QR_DISLIKE_ACTIVITY> J'ai pas accroché
+    quick_replies:
+      - <QR_LKE_ACTIVITY> J'ai bien aimé
+      - <QR_DISLIKE_ACTIVITY> J'ai pas accroché
 
 R+_LikeTheActivity:
   - text: Sincérement, j'ai jamais compris les émotions, mais si tu es heureux, alors je le suis aussi :)?
@@ -71,7 +71,7 @@ R-_LikeTheActivity:
 R-_lastMinuteDifficulties:
   - typing: 1s
     text: Bien joué ;) C'est assez rare d'organiser une activité sans rencontrer d'imprévus.
-    typing: 1s
+  - typing: 1s
     text: Je voulais aussi te demander si tu t'es suffisamment assuré que l'objectif du groupe soit atteint ?
     quick_replies:
       - <QR_GROUP_GOAL_NOT_ENOUGH> Pas assez
@@ -101,7 +101,7 @@ R+_12_lastMinuteDifficulties:
 R+_34_lastMinuteDifficulties:
   - typing: 1s
     text: Rester calme est une qualité très précieuse! Citation signée Maître Pascal
-    typing: 1s
+  - typing: 1s
     text: Je voulais aussi te demander si tu t'es suffisamment assuré que l'objectif du groupe soit atteint ?
     quick_replies:
       - <QR_GROUP_GOAL_NOT_ENOUGH> Pas assez
@@ -113,7 +113,7 @@ R+_34_lastMinuteDifficulties:
 R-_GroupGoal:
   - text: Ne t'inquiéte pas, ce n'est pas si évident d'être coordinateur...
     typing: 1s
-    text: "Avant dernière question: est-ce que tous les autres membres de l'équipe ont pu finir leurs tâches à temps?"
+  - text: "Avant dernière question: est-ce que tous les autres membres de l'équipe ont pu finir leurs tâches à temps?"
     quick_replies:
       - <QR_RESPECTING_DEADLINES_YES> Oui
       - <QR_RESPECTING_DEADLINES_NO> Non
@@ -160,6 +160,8 @@ R-_Deadlines:
 
 # Sending graph and Good Bye
 Graph_Goodbye:
+  - text: Bye bye et voici le tableau de tes réponses
+    typing: 1s
 
 
 
